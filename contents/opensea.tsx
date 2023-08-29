@@ -1,6 +1,9 @@
 import cssText from "data-text:~style.css"
+import { motion } from "framer-motion"
 import type { PlasmoCSConfig, PlasmoGetInlineAnchorList } from "plasmo"
 import { useEffect, useState } from "react"
+
+import "lucide-react"
 
 export const config: PlasmoCSConfig = {
   matches: ["https://opensea.io/collection/0n1-force"]
@@ -19,10 +22,10 @@ export const getStyle = () => {
 
 const FramesInfo = () => {
   const [imgUrl, setImgUrl] = useState("")
+  const [frameOn, setFrameOn] = useState(false)
   useEffect(() => {
     const imgParent = document.querySelector("div.AssetMedia--img")
     imgParent.setAttribute("class", "relative")
-    console.log("imgParent: ", imgParent)
 
     if (imgParent) {
       const imgTag = imgParent.querySelector("img")
@@ -48,7 +51,15 @@ const FramesInfo = () => {
   }, [])
   return (
     <div className="w-full h-full">
-      {imgUrl && <img src={imgUrl} alt="Metadata" width="25%" height="25%" />}
+      {imgUrl && (
+        <motion.img
+          initial={{ width: "16.66%", height: "16.66%", opacity: 0.5 }} // 1/6 = 16.66%
+          whileHover={{ width: "100%", height: "100%", opacity: 1 }}
+          src={imgUrl}
+          alt="Metadata"
+          className="w-1/6 h-1/6 hover:w-full hover:h-full"
+        />
+      )}
     </div>
   )
 }
