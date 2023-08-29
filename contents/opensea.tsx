@@ -20,7 +20,6 @@ export const getStyle = () => {
 
 const FramesInfo = () => {
   const [imgUrl, setImgUrl] = useState("")
-  const [frameOn, setFrameOn] = useState(false)
   useEffect(() => {
     const imgParent = document.querySelector("div.AssetMedia--img")
     imgParent.setAttribute("class", "relative")
