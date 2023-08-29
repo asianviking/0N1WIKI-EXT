@@ -9,7 +9,7 @@ export const config: PlasmoCSConfig = {
 export const getInlineAnchorList: PlasmoGetInlineAnchorList = async () =>
   document.querySelectorAll("div.AssetMedia--img")
 
-export const getShadowHostId = () => "0n1wiki-ext"
+export const getShadowHostId = () => "0N1WIKI-EXT"
 
 export const getStyle = () => {
   const style = document.createElement("style")
