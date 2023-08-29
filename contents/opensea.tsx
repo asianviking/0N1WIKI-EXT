@@ -3,8 +3,6 @@ import { motion } from "framer-motion"
 import type { PlasmoCSConfig, PlasmoGetInlineAnchorList } from "plasmo"
 import { useEffect, useState } from "react"
 
-import "lucide-react"
-
 export const config: PlasmoCSConfig = {
   matches: ["https://opensea.io/collection/0n1-force"]
 }
